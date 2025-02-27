@@ -10,6 +10,8 @@ services:
     build: ./java-api
     ports:
       - "8080:8080"
+    depends_on:
+      - postgres
 
   python-api:
     build: ./python-api
@@ -28,3 +30,19 @@ services:
 
   kafka:
     build: ./kafka
+
+  rabbitmq:
+    build: ./rabbitmq
+    ports:
+      - "15673:15672" # Changed port to 15673
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5433:5432" # Changed port to 5433
+
