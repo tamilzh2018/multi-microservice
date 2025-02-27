@@ -1,0 +1,7 @@
+services:
+  - name: example-service
+    url: http://localhost:3000
+  routes:
+    - name: example-route
+      paths:
+        - /example
