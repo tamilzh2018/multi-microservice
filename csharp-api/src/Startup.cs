@@ -1,23 +1,30 @@
-// Startup.cs
-public class Startup {
-    public void ConfigureServices(IServiceCollection services) {
-        services.AddControllers();
-    }
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
-        app.UseRouting();
-        app.UseEndpoints(endpoints => {
-            endpoints.MapControllers();
-        });
-    }
-}
+namespace csharp_api
+{
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+        }
 
-// MyController.cs
-[ApiController]
-[Route("api/data")]
-public class MyController : ControllerBase {
-    [HttpGet]
-    public ActionResult<string> GetData() {
-        return "Hello from C#!";
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
     }
 }
