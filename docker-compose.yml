@@ -40,7 +40,7 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
     ports:
-      - "5433:5432" # Changed port to 5433
+      - "5432:5432" # Changed port to 5433
 
   kafka:
     image: wurstmeister/kafka
@@ -69,10 +69,3 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
-
