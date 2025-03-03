@@ -29,6 +29,23 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+            }
+            pom {
+                withXml {
+                    asNode().appendNode('dependencies').dependencies.each {
+                        dep -> appendNode('dependency').with {
+                            appendNode('groupId', dep.group)
+                            appendNode('artifactId', dep.name)
+                            appendNode('version', dep.version)
+                            appendNode('scope', 'runtime')
+                        }
+                    }
+                }
+            }
         }
     }
     repositories {
