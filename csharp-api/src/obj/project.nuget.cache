@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "dgSpecHash": "rgm190OJeXnSGYDOWOVc+GsKcfDE0tgM4z5Bg+yaEyrzWTwD6oKc4tqAbB04HTkBGFDwKHz0h39FyF+vLQZLmg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\multi-microservice\\csharp-api\\src\\csharp-api.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.Mvc.NewtonsoftJson (>= 3.1.10)' for 'net5.0'.",
+      "libraryId": "Microsoft.AspNetCore.Mvc.NewtonsoftJson",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.VisualStudio.Web.CodeGeneration.Design (>= 5.0.2)' for 'net5.0'.",
+      "libraryId": "Microsoft.VisualStudio.Web.CodeGeneration.Design",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Ref (= 5.0.0)' for 'net5.0'.",
+      "libraryId": "Microsoft.NETCore.App.Ref",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.WindowsDesktop.App.Ref (= 5.0.0)' for 'net5.0'.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.AspNetCore.App.Ref (= 5.0.0)' for 'net5.0'.",
+      "libraryId": "Microsoft.AspNetCore.App.Ref",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Microsoft.NETCore.App.Host.win-x64 (= 5.0.17)' for 'net5.0'.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
