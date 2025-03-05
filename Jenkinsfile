@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        VERSION = "${env.BUILD_NUMBER}"
+        VERSION = "${env.BUILD_NUMBER}" /
+        //docker repo:172.19.74.2:8083/repository/docker-registry/multi-microservice
     }
 
     stages {
@@ -22,6 +23,7 @@ pipeline {
                         string(credentialsId: 'docker-registry', variable: 'DOCKER_URL')
                     ]) {
                         // Docker login command, ensuring secure login
+                        //exposedhttp://endpoint/api/data
                         sh """
                             echo "Logging into Docker registry..."
                             if echo ${env.DOCKER_PASS} | docker login --username ${env.DOCKER_USER} --password-stdin ${env.DOCKER_URL}; then
@@ -66,7 +68,7 @@ pipeline {
                             echo "Removing Docker image locally..."
                             docker rmi ${env.DOCKER_URL}/nodejs-api:${env.BUILD_NUMBER}
 							
-							echo "Building csharp-api Docker image..."
+							echo "Building python-api Docker image..."
                             docker build -t ${env.DOCKER_URL}/python-api:${env.BUILD_NUMBER} python-api/
 
                             echo "Pushing Docker image..."
@@ -74,6 +76,15 @@ pipeline {
 
                             echo "Removing Docker image locally..."
                             docker rmi ${env.DOCKER_URL}/python-api:${env.BUILD_NUMBER}
+                            							
+							echo "Building go-api Docker image..."
+                            docker build -t ${env.DOCKER_URL}/go-api:${env.BUILD_NUMBER} go-api/
+
+                            echo "Pushing Docker image..."
+                            docker push ${env.DOCKER_URL}/go-api:${env.BUILD_NUMBER}
+
+                            echo "Removing Docker image locally..."
+                            docker rmi ${env.DOCKER_URL}/go-api:${env.BUILD_NUMBER}
                         """
                     }
                 }
