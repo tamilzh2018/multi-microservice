@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-api-deployment
+  labels:
+    app: go-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-api
+  template:
+    metadata:
+      labels:
+        app: go-api
+    spec:
+      imagePullSecrets:                 # Move this section here
+      - name: docker-registry-secret
+      containers:
+      - name: go-api
+        image: 172.19.74.2:8083/repository/docker-registry/multi-microservice/go-api:15
+        ports:
+        - containerPort: 8000
