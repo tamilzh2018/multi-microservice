@@ -18,7 +18,7 @@ spec:
       - name: docker-registry-secret
       containers:
       - name: java-api
-        image: 172.19.74.2:8083/repository/docker-registry/multi-microservice/java-api:15
+        image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/java-api:15
         ports:
         - containerPort: 8080
         envFrom:

@@ -18,6 +18,6 @@ spec:
       - name: docker-registry-secret
       containers:
       - name: python-api
-        image: 172.19.74.2:8083/repository/docker-registry/multi-microservice/python-api:15
+        image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/python-api:15
         ports:
         - containerPort: 5000
