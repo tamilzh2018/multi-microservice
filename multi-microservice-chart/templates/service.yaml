@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "multi-microservice-chart.fullname" . }}
+  labels:
+    {{- include "multi-microservice-chart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "multi-microservice-chart.selectorLabels" . | nindent 4 }}

@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VERSION = "${env.BUILD_NUMBER}" /
-        //docker repo:172.19.74.2:8083/repository/docker-registry/multi-microservice
+        //Example docker repo:172.19.79.173:8083/repository/docker-registry/multi-microservice
     }
 
     stages {

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-api-deployment
+  labels:
+    app: python-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-api
+  template:
+    metadata:
+      labels:
+        app: python-api
+    spec:
+      imagePullSecrets:                 # Move this section here
+      - name: docker-registry-secret
+      containers:
+      - name: python-api
+        image: 172.19.74.2:8083/repository/docker-registry/multi-microservice/python-api:15
+        ports:
+        - containerPort: 5000
