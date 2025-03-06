@@ -14,10 +14,11 @@ spec:
       labels:
         app: nodejs-api
     spec:
-      imagePullSecrets:                 # Move this section here
+      imagePullSecrets:                 
       - name: docker-registry-secret
       containers:
       - name: nodejs-api
-        image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/nodejs-api:15
+        image: "{{ .Values.nodejs-api.image }}:{{ .Values.nodejs-api.tag }}"
+        imagePullPolicy: "{{ .Values.global.pullPolicy }}"
         ports:
         - containerPort: 3000

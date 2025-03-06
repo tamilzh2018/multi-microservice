@@ -22,3 +22,23 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
+dependencies:
+- name: csharp-api
+  version: "1.0.0"
+  repository: "file://charts/csharp-api"
+- name: go-api
+  version: "1.0.0"
+  repository: "file://charts/go-api"
+- name: java-api
+  version: "1.0.0"
+  repository: "file://charts/java-api"
+- name: nginx
+  version: "1.0.0"
+  repository: "file://charts/nginx"
+- name: nodejs-api
+  version: "1.0.0"
+  repository: "file://charts/nodejs-api"
+- name: python-api
+  version: "1.0.0"
+  repository: "file://charts/python-api"
+

@@ -1,30 +1,38 @@
 nginx:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/nginx:15
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/nginx
+  tag: 15
   replicaCount: 1
-  noderole: common
-  
+   
 csharp-api:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/csharp-api:15
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/csharp-api
+  tag: 15
   replicaCount: 1
-  noderole: common
 
 python-api:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/python-api:15
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/python-api
+  tag: 15
   replicaCount: 1
-  noderole: common
 
 java-api:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/java-api:15
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/java-api
+  tag: 15
   replicaCount: 1
-  noderole: common
 
 go-api:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/go-api:15
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/go-api
+  tag: 15
   replicaCount: 1
   noderole: common
 
-node-api:
-  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/node-api:15
+nodejs-api:
+  image: 172.19.79.173:8083/repository/docker-registry/multi-microservice/nodejs-api
+  tag: 15
   replicaCount: 1
-  noderole: common
+
+global:
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
 
