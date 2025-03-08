@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+service:
+  targetPort: 8000
+  port: 6000
+  type: NodePort
+  nodePort: 30001
+
+container:
+  name: go-api
+
+imagePullSecrets:
+  name: docker-registry-secret
+

@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+service:
+  name: java-api-service
+  type: NodePort
+  targetPort: 8080
+  port: 8080
+  nodePort: 30002
+ 
+container:
+  name: java-api
+
+imagePullSecrets:
+  name: docker-registry-secret

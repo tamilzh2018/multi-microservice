@@ -1,0 +1,19 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+service:
+  name: python-api-service
+  type: NodePort
+  targetPort: 5000
+  port: 5000
+  nodePort: 30004
+
+container:
+  name: python-api
+
+imagePullSecrets:
+  name: docker-registry-secret
+

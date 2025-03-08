@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+service:
+  name: nodejs-api-service
+  type: NodePort
+  targetPort: 3000
+  port: 3000
+  nodePort: 30003
+
+container:
+  name: nodejs-api
+
+imagePullSecrets:
+  name: docker-registry-secret
